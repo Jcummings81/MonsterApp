@@ -1870,3 +1870,93 @@ Migrating to CreateMonsters (20181215172850)
   ↳ db/seeds.rb:47
   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:47
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 11:04:55 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MonstersController#index as */*
+  Parameters: {"monster"=>{}}
+  [1m[36mMonster Load (1.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 23ms (Views: 15.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/monsters/5" for 127.0.0.1 at 2018-12-15 11:05:09 -0700
+Processing by MonstersController#show as */*
+  Parameters: {"id"=>"5", "monster"=>{}}
+  [1m[36mMonster Load (0.7ms)[0m  [1m[34mSELECT  "monsters".* FROM "monsters" WHERE "monsters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/monsters_controller.rb:10
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/monsters/" for 127.0.0.1 at 2018-12-15 11:05:12 -0700
+Processing by MonstersController#index as */*
+  Parameters: {"monster"=>{}}
+  [1m[36mMonster Load (2.0ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 11:05:53 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"jimbo", "password"=>"[FILTERED]", "session"=>{"username"=>"jimbo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jimbo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "jimbo"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["updated_at", "2018-12-15 18:05:54.091343"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:20
+Completed 200 OK in 111ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 11:06:24 -0700
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mMonster Load (0.6ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 40ms (Views: 13.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/monsters" for 127.0.0.1 at 2018-12-15 11:08:32 -0700
+Processing by MonstersController#create as */*
+  Parameters: {"monster"=>{"name"=>"Catnap", "description"=>"A Sleepy Cat"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/monsters_controller.rb:17
+  [1m[36mMonster Create (1.9ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catnap"], ["description", "A Sleepy Cat"], ["user_id", 1], ["created_at", "2018-12-15 18:08:32.015582"], ["updated_at", "2018-12-15 18:08:32.015582"]]
+  ↳ app/controllers/monsters_controller.rb:17
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/monsters_controller.rb:17
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 11:08:58 -0700
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "a7KwrSPiQVbw6L9FH2bxa8nJ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mMonster Load (3.2ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 12ms (Views: 3.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 11:10:18 -0700
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"welcome"=>{}}
+  Rendering /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 106ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
