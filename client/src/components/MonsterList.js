@@ -8,9 +8,12 @@ class MonsterList extends Component {
 
     componentDidMount() {
         fetch('/monsters')
-        .then(res => res.join)
+        .then(res => res.json())
         .then( res => {
-            console.log(res);
+            this.setState({
+                monsterList: res.monsters,
+                monsterListLoaded: true,
+            })
         }).catch(err => console.log(err))
     }
 
@@ -36,3 +39,5 @@ class MonsterList extends Component {
 
     }
 }
+
+export default MonsterList
