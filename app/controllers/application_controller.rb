@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::API
-    include
-    ActionController::HttpAuthentication::Token::ActionControllerMethods
+include ActionController::HttpAuthentication::Token::ControllerMethods
+
 end
