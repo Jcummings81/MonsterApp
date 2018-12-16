@@ -8,7 +8,7 @@ import LoginForm from './components/LoginForm'
 import Dashboard from './components/Dashboard'
 
 class App extends Component {
-state = { auth: Auth.isUserAuthenticated(), shouldGoToDash: false }
+state = { auth: Auth.isUserAuthenticated() }
 
 handleRegisterSubmit(e, data) {
   e.preventDefault();
@@ -26,7 +26,6 @@ handleRegisterSubmit(e, data) {
     Auth.authenticateToken(res.token);
     this.setState({
       auth: Auth.isUserAuthenticated(),
-      shouldGoToDash: true,
     })
   }).catch(err => {
     console.log(err);
@@ -47,10 +46,26 @@ handleLoginSubmit(e, data) {
     Auth.authenticateToken(res.token);
     this.setState({
       auth: Auth.isUserAuthenticated(),
-      shouldGoToDash: true,
     })
   }).catch(err => {
     console.log(err);
+  })
+}
+
+handleLogout() {
+  fetch('/logout', {
+    method: 'DELETE',
+    headers: {
+      token: Auth.getToken(),
+      'Authorization': `Token ${Auth.getToken()}`,
+    }
+      }).then(res => {
+        Auth.deauthenticateToken()
+        this.setState({
+          auth: Auth.isUserAuthenticated(),
+    }).catch(err => {
+        console.log(err)
+    })
   })
 }
 
@@ -64,6 +79,7 @@ handleLoginSubmit(e, data) {
         <Link to="/register">Register | </Link>
         <Link to="/dash">Dashboard | </Link>
         <Link to="/monsters">Monsters | </Link>
+        <span onClick={this.handleLogout}>Logout</span>
 
 
 
@@ -83,7 +99,6 @@ handleLoginSubmit(e, data) {
           handleLoginSubmit={this.handleLoginSubmit}
           /> } />
         </div>
-        {(this.state.shouldGoToDash) ? <Redirect to="/dash" /> : '' }
         </>
       </Router>
    

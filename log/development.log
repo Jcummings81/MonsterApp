@@ -2741,3 +2741,1872 @@ Processing by UsersController#create as */*
 Completed 200 OK in 78ms (Views: 0.3ms | ActiveRecord: 4.1ms)
 
 
+Started POST "/users" for 127.0.0.1 at 2018-12-15 17:55:55 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 422 Unprocessable Entity in 34ms (ActiveRecord: 12.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-15 17:59:10 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ki", "password"=>"[FILTERED]", "email"=>"ki@ki", "name"=>"kiki"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ki"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "ki"], ["password_digest", "$2a$10$0DH/BqoWzGymXVFDCjis5OZs/1ORXxNqhsk8vAacMjctK/HSJfYrS"], ["email", "ki@ki"], ["name", "kiki"], ["auth_token", "BiCwanNH4XhrbyHcoPeUbyFH"], ["created_at", "2018-12-16 00:59:10.464859"], ["updated_at", "2018-12-16 00:59:10.464859"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 82ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 18:03:58 -0700
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (0.9ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 31ms (Views: 16.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:12:49 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 18:12:53 -0700
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (1.3ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:12:54 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:13:38 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 18:14:14 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"slim", "password"=>"[FILTERED]", "email"=>"slim@shady", "name"=>"slimshady"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "slim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "slim"], ["password_digest", "$2a$10$6XBvo.6Mcu0cVcdEZUtIl.n1mWblvCuunEdL6xlraWtt3Dns/tfia"], ["email", "slim@shady"], ["name", "slimshady"], ["auth_token", "aKgc5L1uqxkjEtFLBtx2isCn"], ["created_at", "2018-12-16 01:14:14.961254"], ["updated_at", "2018-12-16 01:14:14.961254"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:14:37 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:17 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:21 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:32 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:41 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:50 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:18:54 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:19:02 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:19:28 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:19:30 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:19:44 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:19:52 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:20:09 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:20:13 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:20:19 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:22:12 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:22 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:31 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:34 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:44 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:47 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:23:58 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:05 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:08 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:25 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:26 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:27 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:29 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:33 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:35 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:40 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:24:57 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:13 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:28 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:33 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:34 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:37 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:38 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:27:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:28:05 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:28:12 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:29:59 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-15 18:32:44 -0700
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "aKgc5L1uqxkjEtFLBtx2isCn"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 14]]
+  ↳ app/models/user.rb:8
+Completed 200 OK in 8ms (ActiveRecord: 4.6ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-15 18:32:56 -0700
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "aKgc5L1uqxkjEtFLBtx2isCn"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `invalidate_token' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:28:in `logout'
+app/controllers/sessions_controller.rb:14:in `destroy'
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:33:21 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:33:47 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:33:52 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:34:07 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:34:13 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:34:18 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:34:20 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 18:34:48 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"soon", "password"=>"[FILTERED]", "email"=>"soon@soon", "name"=>"soonsoon"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "soon"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "soon"], ["password_digest", "$2a$10$AaygqqiyB3TBzo7oFGE7QeITJSsE.i.vxJTvdZZmTXPCJ9u0a75.2"], ["email", "soon@soon"], ["name", "soonsoon"], ["auth_token", "4wCSAkCc3y6dbvz8FAksqWEg"], ["created_at", "2018-12-16 01:34:48.537733"], ["updated_at", "2018-12-16 01:34:48.537733"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 77ms (Views: 0.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:35:04 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:36:16 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:36:25 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:36:27 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:38:22 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (194.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonsterApp_development"[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (170.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonsterApp_test"[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (416.8ms)[0m  [1m[35mCREATE DATABASE "MonsterApp_development" ENCODING = 'unicode'[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (446.7ms)[0m  [1m[35mCREATE DATABASE "MonsterApp_test" ENCODING = 'unicode'[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4741025743097791980)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateUsers (20181215015646)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "email" character varying, "name" character varying, "auth_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181215015646_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181215015646"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateMonsters (20181215172850)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "monsters" ("id" bigserial primary key, "name" character varying, "description" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181215172850_create_monsters.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_monsters_on_user_id" ON "monsters"  ("user_id")[0m
+  ↳ db/migrate/20181215172850_create_monsters.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181215172850"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-16 01:42:59.415112"], ["updated_at", "2018-12-16 01:42:59.415112"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4741025743097791980)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mMonster Load (0.6ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jimbo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "jimbo"], ["password_digest", "$2a$10$7ffIpJp/OtXH6yiVeJSv.ej.tPJVe4m1AzgKblYIcGgrID7ojmHAi"], ["email", "jimbo@ga.co"], ["auth_token", "S2JR2NakGfng5j7DjboMdy2f"], ["created_at", "2018-12-16 01:42:59.565937"], ["updated_at", "2018-12-16 01:42:59.565937"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "faust"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "faust"], ["password_digest", "$2a$10$v9BogN3hr5wRxgLS9eYr4eXuM2hln28Wr/NAQFB4tOVFQh7eYBtxO"], ["email", "faust@ga.co"], ["auth_token", "cY18gbyAq7uDbNp8rzMDjama"], ["created_at", "2018-12-16 01:42:59.649418"], ["updated_at", "2018-12-16 01:42:59.649418"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bumpy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "bumpy"], ["password_digest", "$2a$10$zos4SEzLiJSsBP8rmuytAuLOFTI6.lZ6K4ftxv1DO/jDHNJUtTyou"], ["email", "bumpy@ga.co"], ["auth_token", "GRi74LtaMCBmV8Y2Z8qtgMPk"], ["created_at", "2018-12-16 01:42:59.731151"], ["updated_at", "2018-12-16 01:42:59.731151"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "slice"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "slice"], ["password_digest", "$2a$10$ad5M6MnQBavObjn3y.wHDeX.rj9HaQhAUqZdLIbTToMvLlOg9G4VO"], ["email", "slice@ga.co"], ["auth_token", "iXAbh2tpkVe1bNw7oJc4VAhT"], ["created_at", "2018-12-16 01:42:59.822205"], ["updated_at", "2018-12-16 01:42:59.822205"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "beebop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "beebop"], ["password_digest", "$2a$10$YL1JlqZahshvSUeS8YeOWete37KZ90m/jit6gBbpJAgPcH/dYWm3e"], ["email", "beebop@ga.co"], ["auth_token", "nrKJEdsQoudkfUB5rhTTSumd"], ["created_at", "2018-12-16 01:42:59.909732"], ["updated_at", "2018-12-16 01:42:59.909732"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rocksteady"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "rocksteady"], ["password_digest", "$2a$10$v08FvAX3qaIv6l8F0jZYrO6S/ncSVptyN4rz.XnMBix7cHjL23iFW"], ["email", "rocksteady@ga.co"], ["auth_token", "yJxMRvTKA3vnj8Kx47Tzr2G4"], ["created_at", "2018-12-16 01:42:59.994858"], ["updated_at", "2018-12-16 01:42:59.994858"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mMonster Create (1.2ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stacey"], ["description", "A friendly Monster"], ["user_id", 1], ["created_at", "2018-12-16 01:43:00.022089"], ["updated_at", "2018-12-16 01:43:00.022089"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lacey"], ["description", "A fiendish Monster"], ["user_id", 1], ["created_at", "2018-12-16 01:43:00.028296"], ["updated_at", "2018-12-16 01:43:00.028296"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tracey"], ["description", "A fucked up Monster"], ["user_id", 1], ["created_at", "2018-12-16 01:43:00.033651"], ["updated_at", "2018-12-16 01:43:00.033651"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kim"], ["description", "A funny Monster"], ["user_id", 2], ["created_at", "2018-12-16 01:43:00.039192"], ["updated_at", "2018-12-16 01:43:00.039192"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lim"], ["description", "A frightening Monster"], ["user_id", 2], ["created_at", "2018-12-16 01:43:00.044519"], ["updated_at", "2018-12-16 01:43:00.044519"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jim"], ["description", "A fellow Monster"], ["user_id", 2], ["created_at", "2018-12-16 01:43:00.048412"], ["updated_at", "2018-12-16 01:43:00.048412"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stan"], ["description", "A full figured Monster"], ["user_id", 3], ["created_at", "2018-12-16 01:43:00.051988"], ["updated_at", "2018-12-16 01:43:00.051988"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dan"], ["description", "A frumpy Monster"], ["user_id", 3], ["created_at", "2018-12-16 01:43:00.056472"], ["updated_at", "2018-12-16 01:43:00.056472"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cam"], ["description", "A faculty Monster"], ["user_id", 3], ["created_at", "2018-12-16 01:43:00.060095"], ["updated_at", "2018-12-16 01:43:00.060095"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Katrina"], ["description", "A friendly Monster"], ["user_id", 4], ["created_at", "2018-12-16 01:43:00.064149"], ["updated_at", "2018-12-16 01:43:00.064149"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Latrina"], ["description", "A fiendish Monster"], ["user_id", 4], ["created_at", "2018-12-16 01:43:00.067380"], ["updated_at", "2018-12-16 01:43:00.067380"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shawquina"], ["description", "A fucked up Monster"], ["user_id", 4], ["created_at", "2018-12-16 01:43:00.070934"], ["updated_at", "2018-12-16 01:43:00.070934"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cicero"], ["description", "A funny Monster"], ["user_id", 5], ["created_at", "2018-12-16 01:43:00.074652"], ["updated_at", "2018-12-16 01:43:00.074652"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Herodotus"], ["description", "A frightening Monster"], ["user_id", 5], ["created_at", "2018-12-16 01:43:00.078450"], ["updated_at", "2018-12-16 01:43:00.078450"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Archimedes"], ["description", "A fellow Monster"], ["user_id", 5], ["created_at", "2018-12-16 01:43:00.082279"], ["updated_at", "2018-12-16 01:43:00.082279"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vulture"], ["description", "A full figured Monster"], ["user_id", 6], ["created_at", "2018-12-16 01:43:00.085436"], ["updated_at", "2018-12-16 01:43:00.085436"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Culture"], ["description", "A frumpy Monster"], ["user_id", 6], ["created_at", "2018-12-16 01:43:00.089487"], ["updated_at", "2018-12-16 01:43:00.089487"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shimsham"], ["description", "A faculty Monster"], ["user_id", 6], ["created_at", "2018-12-16 01:43:00.093262"], ["updated_at", "2018-12-16 01:43:00.093262"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+Started GET "/main.b613a8d21864ab40d97f.hot-update.js" for 127.0.0.1 at 2018-12-15 18:43:36 -0700
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/main.b613a8d21864ab40d97f.hot-update.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:44:24 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:46:31 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:46:32 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:46:56 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:46:57 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:47:00 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:50:30 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:50:46 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:50:49 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:50:51 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:50:56 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:51:10 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:51:35 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:51:42 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:51:54 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:16 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:18 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:24 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:29 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:36 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:40 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:41 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:46 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:52:52 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:54:21 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 18:55:04 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"skill", "password"=>"[FILTERED]", "email"=>"skill@skill", "name"=>"skillskill"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "skill"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "skill"], ["password_digest", "$2a$10$E07kr1HJt8UP/2qmiTAUsefj3iUL3opYMUN0LaenR/bDQ4mH5epFq"], ["email", "skill@skill"], ["name", "skillskill"], ["auth_token", "kk57iqFC2Zw87nnC7wZDVj8p"], ["created_at", "2018-12-16 01:55:04.702592"], ["updated_at", "2018-12-16 01:55:04.702592"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 97ms (Views: 0.4ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 18:56:40 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 19:09:26 -0700
+Processing by MonstersController#index as */*
+  Parameters: {"monster"=>{}}
+  [1m[36mMonster Load (2.4ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 24ms (Views: 15.6ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 19:10:49 -0700
+  
+SyntaxError (/Users/jessecummings/Desktop/Work/MonsterApp/app/controllers/users_controller.rb:11: syntax error, unexpected [, expecting ')'
+        [:token])
+        ^
+/Users/jessecummings/Desktop/Work/MonsterApp/app/controllers/users_controller.rb:11: syntax error, unexpected ')', expecting keyword_end
+        [:token])
+                ^):
+  
+app/controllers/users_controller.rb:11: syntax error, unexpected [, expecting ')'
+app/controllers/users_controller.rb:11: syntax error, unexpected ')', expecting keyword_end
+Started POST "/users" for 127.0.0.1 at 2018-12-15 19:11:24 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"same", "password"=>"[FILTERED]", "email"=>"same@same", "name"=>"samesame"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "same"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "same"], ["password_digest", "$2a$10$GG.K5AdqSRXTQXzmnEcgX.orXMzRlXW58k6OtMBpPQZe6NisZN3iS"], ["email", "same@same"], ["name", "samesame"], ["auth_token", "kp9T3fUNC1M38X5jE5kKczHC"], ["created_at", "2018-12-16 02:11:24.874504"], ["updated_at", "2018-12-16 02:11:24.874504"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 19:11:32 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"same", "password"=>"[FILTERED]", "email"=>"same@same", "name"=>"samesame"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "same"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 422 Unprocessable Entity in 94ms (ActiveRecord: 7.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username has already been taken):
+  
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-15 19:12:13 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"ship", "password"=>"[FILTERED]", "email"=>"ship@ship", "name"=>"shipship"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ship"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "ship"], ["password_digest", "$2a$10$zDdA5xyOFoNWV9pKe8ZpReQYJ7ROkuist69yYIpcINzFVbmxIj8Qq"], ["email", "ship@ship"], ["name", "shipship"], ["auth_token", "imQxS7S16HuMwpNECSPJvnh9"], ["created_at", "2018-12-16 02:12:13.463047"], ["updated_at", "2018-12-16 02:12:13.463047"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 19:13:20 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"ship", "password"=>"[FILTERED]", "session"=>{"username"=>"ship", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ship"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 83ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 19:14:32 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"han", "password"=>"[FILTERED]", "email"=>"han@solo", "name"=>"hansolo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "han"], ["password_digest", "$2a$10$UgKuBoYDzCrb5720c/mYLuFqqWo7pbL7YgYMaFl.zZ0rAbwg8FXRa"], ["email", "han@solo"], ["name", "hansolo"], ["auth_token", "5qAZm36gnLbhDtZaXmZ4dwww"], ["created_at", "2018-12-16 02:14:32.883073"], ["updated_at", "2018-12-16 02:14:32.883073"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 75ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 19:15:27 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"han", "password"=>"[FILTERED]", "session"=>{"username"=>"han", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 75ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 19:16:23 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"{\n\t\"username\": \"han\",\n\t\"password\": \"solo\"\n\n}"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 19:18:42 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (0.8ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:19:20 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:22:15 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:22:50 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:28:07 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:28:14 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:28:33 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:28:54 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:29:01 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:29:03 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:29:08 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:03 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:09 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:12 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:17 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:19 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:21 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:22 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:26 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:32 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:44 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:34:53 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:35:01 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:35:11 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 19:36:31 -0700
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (0.6ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 49ms (Views: 25.7ms | ActiveRecord: 21.0ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (178.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonsterApp_development"[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (168.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MonsterApp_test"[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (406.9ms)[0m  [1m[35mCREATE DATABASE "MonsterApp_development" ENCODING = 'unicode'[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (420.4ms)[0m  [1m[35mCREATE DATABASE "MonsterApp_test" ENCODING = 'unicode'[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4741025743097791980)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateUsers (20181215015646)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "email" character varying, "name" character varying, "auth_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181215015646_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181215015646"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateMonsters (20181215172850)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "monsters" ("id" bigserial primary key, "name" character varying, "description" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181215172850_create_monsters.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_monsters_on_user_id" ON "monsters"  ("user_id")[0m
+  ↳ db/migrate/20181215172850_create_monsters.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181215172850"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-16 02:38:50.742620"], ["updated_at", "2018-12-16 02:38:50.742620"]]
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4741025743097791980)[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mMonster Load (1.2ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jimbo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "jimbo"], ["password_digest", "$2a$10$awOepwzn6dZMgC8p00tvCuJf1e8A7AhGNVmQuHOEkbVm7gTp/gvPy"], ["email", "jimbo@ga.co"], ["auth_token", "Zw9Gvi9rimtgDmQWB2va74WN"], ["created_at", "2018-12-16 02:38:50.883110"], ["updated_at", "2018-12-16 02:38:50.883110"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "faust"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "faust"], ["password_digest", "$2a$10$qSSf4tw63PvpS2Xx63uMqe7Z1XgX6L48tu2792067NcZNiBcnk1HK"], ["email", "faust@ga.co"], ["auth_token", "kvrd29MhAcpMH8cPHryyriyG"], ["created_at", "2018-12-16 02:38:50.964972"], ["updated_at", "2018-12-16 02:38:50.964972"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bumpy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "bumpy"], ["password_digest", "$2a$10$8KNPikZfIFyiTvuXA7whSOudPpG9.jhRL2HC/6oQs/P5wR6AfTx22"], ["email", "bumpy@ga.co"], ["auth_token", "X8Q3FJu8McjwGprgqRPPzLmY"], ["created_at", "2018-12-16 02:38:51.045294"], ["updated_at", "2018-12-16 02:38:51.045294"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "slice"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "slice"], ["password_digest", "$2a$10$Wklx8/89d2nhZdQSWur.f.BVCA4Jm39a6m7WT36E2AxDVih9twW2e"], ["email", "slice@ga.co"], ["auth_token", "Qp9nZpwh6mVwFBCDCeF6GKXZ"], ["created_at", "2018-12-16 02:38:51.125354"], ["updated_at", "2018-12-16 02:38:51.125354"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "beebop"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "beebop"], ["password_digest", "$2a$10$Zvy.UDLWVPRDrxIh7avM.uPKKuQkQOLsfTzVoTo0Ebpn8rBuQuo.C"], ["email", "beebop@ga.co"], ["auth_token", "1DCsenCwY2Zm2Fk35a9tNkWx"], ["created_at", "2018-12-16 02:38:51.201582"], ["updated_at", "2018-12-16 02:38:51.201582"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rocksteady"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "rocksteady"], ["password_digest", "$2a$10$g3Qf5vM90CNNQFQKYC5uauGvMj9MHDS4lz4YzKIOMU1zltr1fu.Bq"], ["email", "rocksteady@ga.co"], ["auth_token", "YHtozzht2jeRUpz6Cfih5n33"], ["created_at", "2018-12-16 02:38:51.289419"], ["updated_at", "2018-12-16 02:38:51.289419"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mMonster Create (1.2ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stacey"], ["description", "A friendly Monster"], ["user_id", 1], ["created_at", "2018-12-16 02:38:51.315720"], ["updated_at", "2018-12-16 02:38:51.315720"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lacey"], ["description", "A fiendish Monster"], ["user_id", 1], ["created_at", "2018-12-16 02:38:51.321419"], ["updated_at", "2018-12-16 02:38:51.321419"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tracey"], ["description", "A fucked up Monster"], ["user_id", 1], ["created_at", "2018-12-16 02:38:51.326613"], ["updated_at", "2018-12-16 02:38:51.326613"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kim"], ["description", "A funny Monster"], ["user_id", 2], ["created_at", "2018-12-16 02:38:51.332054"], ["updated_at", "2018-12-16 02:38:51.332054"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lim"], ["description", "A frightening Monster"], ["user_id", 2], ["created_at", "2018-12-16 02:38:51.337530"], ["updated_at", "2018-12-16 02:38:51.337530"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jim"], ["description", "A fellow Monster"], ["user_id", 2], ["created_at", "2018-12-16 02:38:51.342691"], ["updated_at", "2018-12-16 02:38:51.342691"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stan"], ["description", "A full figured Monster"], ["user_id", 3], ["created_at", "2018-12-16 02:38:51.348273"], ["updated_at", "2018-12-16 02:38:51.348273"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dan"], ["description", "A frumpy Monster"], ["user_id", 3], ["created_at", "2018-12-16 02:38:51.353645"], ["updated_at", "2018-12-16 02:38:51.353645"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cam"], ["description", "A faculty Monster"], ["user_id", 3], ["created_at", "2018-12-16 02:38:51.358793"], ["updated_at", "2018-12-16 02:38:51.358793"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Katrina"], ["description", "A friendly Monster"], ["user_id", 4], ["created_at", "2018-12-16 02:38:51.364177"], ["updated_at", "2018-12-16 02:38:51.364177"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mMonster Create (0.7ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Latrina"], ["description", "A fiendish Monster"], ["user_id", 4], ["created_at", "2018-12-16 02:38:51.369636"], ["updated_at", "2018-12-16 02:38:51.369636"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shawquina"], ["description", "A fucked up Monster"], ["user_id", 4], ["created_at", "2018-12-16 02:38:51.374676"], ["updated_at", "2018-12-16 02:38:51.374676"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cicero"], ["description", "A funny Monster"], ["user_id", 5], ["created_at", "2018-12-16 02:38:51.378215"], ["updated_at", "2018-12-16 02:38:51.378215"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mMonster Create (0.6ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Herodotus"], ["description", "A frightening Monster"], ["user_id", 5], ["created_at", "2018-12-16 02:38:51.381859"], ["updated_at", "2018-12-16 02:38:51.381859"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mMonster Create (0.5ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Archimedes"], ["description", "A fellow Monster"], ["user_id", 5], ["created_at", "2018-12-16 02:38:51.385888"], ["updated_at", "2018-12-16 02:38:51.385888"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vulture"], ["description", "A full figured Monster"], ["user_id", 6], ["created_at", "2018-12-16 02:38:51.389703"], ["updated_at", "2018-12-16 02:38:51.389703"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Culture"], ["description", "A frumpy Monster"], ["user_id", 6], ["created_at", "2018-12-16 02:38:51.393106"], ["updated_at", "2018-12-16 02:38:51.393106"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMonster Create (0.4ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shimsham"], ["description", "A faculty Monster"], ["user_id", 6], ["created_at", "2018-12-16 02:38:51.396757"], ["updated_at", "2018-12-16 02:38:51.396757"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:50:23 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:50:50 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:52:42 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 19:52:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:03:16 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:06:00 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:06:41 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:13:43 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:27:16 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 20:27:35 -0700
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (1.9ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 44ms (Views: 17.8ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:27:36 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 20:43:00 -0700
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:17:in `user_params'
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-12-15 20:44:08 -0700
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:17:in `user_params'
+app/controllers/users_controller.rb:5:in `create'
+Started POST "/user" for 127.0.0.1 at 2018-12-15 20:44:19 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user" for 127.0.0.1 at 2018-12-15 20:45:04 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user" for 127.0.0.1 at 2018-12-15 20:45:18 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user" for ::1 at 2018-12-15 20:45:31 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2018-12-15 20:45:40 -0700
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:17:in `user_params'
+app/controllers/users_controller.rb:5:in `create'
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:47:11 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 20:47:38 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-15 20:51:35 -0700
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (4.9ms)
+Completed 200 OK in 21ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 20:52:40 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"han", "password"=>"[FILTERED]", "email"=>"han@solo", "name"=>"hansolo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "han"], ["password_digest", "$2a$10$J/vZ4RLsZ6jaaatBkMnAuusZev8FL9evnpMcbky60onR9XyhBQGFW"], ["email", "han@solo"], ["name", "hansolo"], ["auth_token", "9tfx4VEvQV8RntcPzmpe3XqA"], ["created_at", "2018-12-16 03:52:40.661712"], ["updated_at", "2018-12-16 03:52:40.661712"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 151ms (Views: 0.3ms | ActiveRecord: 25.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:53:38 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+
+	"username": "han",
+	"password": "solo",
+
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
+
+	"username": "han",
+	"password": "solo",
+
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:53:57 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+
+	"username": "han",
+	"password": "solo",
+
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{
+
+	"username": "han",
+	"password": "solo",
+
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:54:12 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"han", "password"=>"[FILTERED]", "session"=>{"username"=>"han", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 103ms (Views: 0.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:55:27 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"han", "password"=>"[FILTERED]", "session"=>{"username"=>"han", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 113ms (Views: 0.4ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:57:05 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"han", "password"=>"[FILTERED]", "session"=>{"username"=>"han", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "han"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 104ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 20:58:33 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"himn", "password"=>"[FILTERED]", "email"=>"him@bolo", "name"=>"himbolo"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "himn"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "himn"], ["password_digest", "$2a$10$GND0iHppOPIW0NT8FGwFxOhAPp8wkc8Se2CSuiAMbHqKI1sE7sX7G"], ["email", "him@bolo"], ["name", "himbolo"], ["auth_token", "f1x94Uf8SPG21iX7oTHPTxBM"], ["created_at", "2018-12-16 03:58:34.060137"], ["updated_at", "2018-12-16 03:58:34.060137"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:59:21 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"himn", "password"=>"[FILTERED]", "session"=>{"username"=>"himn", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "himn"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 82ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 20:59:47 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"himn", "password"=>"[FILTERED]", "session"=>{"username"=>"himn", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "himn"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 401 Unauthorized in 110ms (Views: 0.5ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-15 21:00:40 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"himn", "password"=>"[FILTERED]", "session"=>{"username"=>"himn", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "himn"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "himn"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "FXhCPmPhVpVqteW8QQj75FCm"], ["updated_at", "2018-12-16 04:00:40.271090"], ["id", 8]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:20
+Completed 200 OK in 137ms (Views: 0.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 21:03:19 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jessecummings/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 21:04:25 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 21:04:50 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-15 21:05:33 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"shim", "password"=>"[FILTERED]", "email"=>"shim@shim", "name"=>"shimshim"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "shim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "shim"], ["password_digest", "$2a$10$y4S56/P3bhliOYDeZcTjVelJOVZ8vsiEG2WNoR86Qbl/cHLFLtodK"], ["email", "shim@shim"], ["name", "shimshim"], ["auth_token", "t3uK8E9M7FwyiJG5oSFez4qs"], ["created_at", "2018-12-16 04:05:33.194829"], ["updated_at", "2018-12-16 04:05:33.194829"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 99ms (Views: 0.1ms | ActiveRecord: 12.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-12-15 21:06:12 -0700
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "t3uK8E9M7FwyiJG5oSFez4qs"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 9]]
+  ↳ app/models/user.rb:8
+Completed 200 OK in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/monsters" for 127.0.0.1 at 2018-12-15 21:06:31 -0700
+Processing by MonstersController#index as */*
+  [1m[36mMonster Load (2.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/controllers/monsters_controller.rb:6
+Completed 200 OK in 26ms (Views: 12.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 21:07:33 -0700
+Processing by UsersController#profile as */*
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-12-15 21:09:04 -0700
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "FXhCPmPhVpVqteW8QQj75FCm"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "FXhCPmPhVpVqteW8QQj75FCm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mMonster Load (1.5ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 41ms (Views: 7.4ms | ActiveRecord: 2.9ms)
+
+
