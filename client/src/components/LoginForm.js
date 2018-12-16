@@ -23,7 +23,7 @@ render() {
         <input type="password" name="password" placeholder="password"
              value={this.state.password} onChange={this.handleChange}/>
       
-        <button type="submit">Login</button>       
+        <input type="submit">Login</input>       
         </form>
         </div>
     )

@@ -29,7 +29,7 @@ render() {
         <input type="text" name="name" placeholder="name"
              value={this.state.name} onChange={this.handleChange} />
 
-<button type="submit">Submit</button>        </form>
+<input type="submit">Submit</input>        </form>
         </div>
     )
 }
