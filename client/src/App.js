@@ -8,7 +8,7 @@ import LoginForm from './components/LoginForm'
 import Dashboard from './components/Dashboard'
 
 class App extends Component {
-state = { auth: Auth.isUserAuthenticated() }
+state = { auth: Auth.isUserAuthenticated(), redirectToDashboard: false}
 
 handleRegisterSubmit(e, data) {
   e.preventDefault();
