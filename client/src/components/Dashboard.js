@@ -27,7 +27,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="dash" >
-                <h1>Testing</h1>
+                <h1>You Have Reached the Dashboard</h1>
             </div>
         )
     }
