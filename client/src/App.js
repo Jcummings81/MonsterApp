@@ -38,9 +38,7 @@ handleLoginSubmit(e, data) {
 
   fetch('/login', {
     method: 'POST',
-    body: JSON.stringify({
-      user: data,
-    }),
+    body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
     }
